@@ -1,0 +1,523 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;/* ? */
+}
+
+body {
+  color: white;
+  /* background: #111;? */
+  overflow-x: hidden;   /*?*/
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;/*can be ignored*/
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;    /*?*/
+  /* background: #e1d9f1; */
+  background-color:black;
+  opacity:0.7;
+  /* backdrop-filter: blur(10px);can be ignored */
+  /* transition: all 0.3s ease; */
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #c77dff;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);/*can be ignored*/
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;/*to remove line under hypertext*/
+  opacity: 0.8;/*makes attractive by blurring*/
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+  color: #f4a3d8;
+  transform: scale(1.05);
+}
+
+.cta-btn {
+  /* background: linear-gradient(135deg, #7b2cbf, #f4a3d8); */
+  /* or */
+  background-color: #39077b;
+  border: none;/*removes the default button border in browser*/
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;/*converts cursor into pointer upon hovering*/
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* opacity:1; */
+}
+
+.cta-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(199, 125, 255, 0.5);
+}
+
+/* 1 */
+/* Hero */
+.hero {
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1920&auto=format&fit=crop") center/cover ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInHero 2s ease;
+}
+
+@keyframes fadeInHero {/*?*/
+  from {opacity: 0; transform: scale(1.02);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+.hero-content {
+  text-align: center;
+  padding: 20px;
+  animation: slideUp 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0);}
+  from { opacity: 0; transform: translateY(30px);}
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 20px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.hero h1 {
+  font-size: 64px;
+  font-family: Georgia, serif;
+  margin-bottom: 20px;
+  line-height: 1.2;/*makes attractive*/
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+.hero h1 span {
+  color: #f4a3d8;
+  background: linear-gradient(90deg, #f4a3d8, #7b2cbf);
+  background-clip: text;/*this property defines how far the background should extend within an element*/
+  color: transparent;/*so that background underneath text is visible*/   
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.9;/*looks good*/
+  margin-bottom: 30px;
+  line-height: 1.6;/*not necessary*/
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.primary {
+  background: linear-gradient(135deg, #f4a3d8, #7b2cbf);
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.primary:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(199, 125, 255, 0.5);
+}
+
+.secondary {
+  background: transparent;
+  border: 2px solid white;
+  padding: 14px 30px;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondary:hover {
+  background: white;
+  color: black;
+  transform: scale(1.05);
+}
+
+
+/* 2 */
+/* Impact Section Styles */
+.impact-section {
+  background-color:#f2f2f7;
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.impact-container {
+  max-width: 1100px;
+  /* width: 100%; */
+  /* position: relative; */
+}
+
+.image-wrapper {
+  position: relative;
+  /* border-radius: 20px; */
+  /* overflow: visible; */
+}
+
+.impact-img {
+  width: 100%;
+  /* height: auto; */
+  /* display: block; */
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.impact-card {
+  position: absolute;
+  bottom: -20px;
+  right: 40px;
+  background: white;
+  padding: 25px 35px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  /* z-index: 5; */
+  animation: slideUp 0.8s ease-out;
+}
+
+.impact-number {
+  font-size: 32px;
+  font-weight: 800;
+  color: #4a148c; /* Deep purple to match your theme */
+  /* line-height: 1; */
+}
+
+.impact-text {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;/*looks good*/
+  font-weight: 500;/*looks good*/
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+  .impact-card {
+    right: 20px;
+    padding: 15px 25px;
+  }
+  .impact-number {
+    font-size: 24px;
+  }
+}
+
+
+/* 3 */
+.challenges {
+  padding: 100px 0;   /* Vertical padding only */
+  /* background: #ffffff; */
+  color: #333333;
+  width: 100%;  /* ? */
+  /* display: block; */
+}
+
+.container {
+  max-width: 1100px; /* Limits the width */
+  margin: 0 auto;    /* Centers the block on the screen */
+  padding: 0 20px;   /* Adds a little "breathing room" on mobile */
+  line-height: 1.6;
+}
+
+
+/* Heading with a dark, sophisticated purple */
+.challenges h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  font-family: Georgia, serif;
+  color: #1a1228; 
+}
+
+.issues-tags {
+  display: flex;
+  gap: 15px;       /* Space between the tags */
+  flex-wrap: wrap; /* Allows them to wrap on mobile */
+  margin-top: 30px;
+}
+
+.issues-tags span {
+  background-color: #eee9f7; /* Soft lavender background */
+  color: #3e1f91;           /* Deep purple text */
+  padding: 10px 22px;       /* Padding to create the pill shape */
+  border-radius: 50px;      /* Fully rounded edges */
+  font-size: 15px;
+  font-weight: 500;
+  cursor: default;
+  border: 1px solid transparent;
+}
+
+.issues-tags span:hover {
+  background-color: #e1d9f1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 4 */
+/* Update your existing .challenges class */
+.challenge {
+  padding: 100px 20px;
+  background:#f2f2f7;
+  color:black;
+  text-align: center;
+}
+
+/* Update your existing .challenges h2 */
+.challenge h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  font-family: Georgia, serif; /* Matches the image style */
+}
+
+/* NEW: The Badge from your image */
+.section-badge {
+  display: inline-block;
+  background: #e1d9f1; 
+  color: #3e1f91;      
+  padding: 6px 20px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/* NEW: Subtitle text */
+.subtitle {
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+  opacity: 0.8;
+  font-size: 16px;
+}
+
+/* NEW: The Grid and Cards */
+.cards-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.issue-card {
+  background: #fdfbff; 
+  border: 1px solid #eeeef5;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: left;
+  flex: 1;/* tells the cards to grow nd sit side-by side */
+  min-width: 250px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.issue-card:hover {
+  transform: translateY(-10px);
+  border-color: #c77dff;
+  box-shadow: 0 10px 25px rgba(123, 44, 191, 0.1);
+}
+
+.issue-card h3 {
+  color: #1a1228;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.icon-box {
+  /* font-size: 24px; */
+  margin-bottom: 15px;
+}
+
+
+/* 5 */
+/* CTA Section Styling */
+.cta-section {
+  padding: 100px 20px;
+  background-color: #eee9f7; /* Dark background matching the image */
+  text-align: center;
+  color: black;
+}
+
+.cta-badge {
+  display: inline-block;
+  background: #e1d9f1; /* Transparent purple */
+  color: #3e1f91;
+  padding: 6px 20px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+}
+
+.cta-section h2 {
+  font-family: Georgia, serif;
+  font-size: 48px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.cta-section h2 span {
+  color: #a267f5; /* Lighter purple for emphasis */
+}
+
+.cta-section p {
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  font-size: 18px;
+  color: #716d79;
+  line-height: 1.6;
+}
+
+/* Button Layout for CTA */
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.primary-btn {
+  background: #390188; /* Bright purple from the image */
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.outline-btn {
+  background: #dfceff;
+  color: black;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 15px 35px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover, .outline-btn:hover {
+  transform: translateY(-3px);
+  background: #c77dff;
+  color: white;
+} 
+
+/* 6 */
+.main-footer {
+  background: white; /* Matches the Challenges section background */
+  padding: 40px 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Subtle separation line */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: Georgia, serif;
+  color: black;
+}
+
+.footer-logo .sparkle {
+  color: #c77dff;
+  margin-right: 5px;
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: #121212; /* Muted lavender color */
+  opacity: 0.8;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #121212;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #f4a3d8;
+}
+
+/* Responsive fix for mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+/* make background white and text black */       
+
+
+
+
+

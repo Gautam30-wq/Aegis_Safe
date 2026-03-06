@@ -1,0 +1,494 @@
+/* Reset basic margins */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    text-align: center;
+    background-color:#f7f5f7;
+
+}
+
+.navbar {
+    width:100%;
+    /* max-width:100%; */
+    /* box-sizing: border-box;  */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: black;
+    opacity:0.7;
+    position:fixed;
+    top:0;
+    z-index:10;/*?*/ /*without this, things can overlap navbar*/
+}
+
+.logo { 
+    font-weight: bold; 
+    font-size: 28px; 
+    color:#c77dff;
+    letter-spacing: 1px; 
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+.nav-links { 
+    display: flex;
+    list-style: none; 
+    gap: 30px; 
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: white; 
+    font-weight: 500; 
+    opacity:0.8; 
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    color: #f4a3d8; 
+    transform: scale(1.05);
+}
+
+.cta-button { 
+    background: #39077b; 
+    color: white; 
+    padding: 8px 20px; 
+    border-radius: 30px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: transform 0.3s ease;
+    box-shadow: 0.3s ease;border:none;
+    cursor:pointer;
+    font-size:small;
+}
+
+.cta-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(78, 4, 134, 0.5);
+}
+
+.hero {
+    max-width: 800px;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+/* Small top text */
+.tagline {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: purple; /* Light purple */
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-weight:bold;
+}
+
+/* Main Heading */
+.content h1 {
+    font-family: 'Georgia', serif; /* Using a serif font for that elegant look */
+    font-size: 3.5rem;
+    /* color:black; */
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+h1 span {
+    color: purple; /* The purple "Challenges" text */
+}
+
+/* Paragraph text */
+.description {
+    font-size: 1.1rem;
+    color: #55555a; /* Muted grey/purple text */
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+/* The Button */
+.btn {
+    display: inline-block;
+    background-color: purple;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease, background-color 0.3s ease,box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #d8b4fe;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(9, 0, 16, 0.5);
+}
+
+/* Statistics Section Styling */
+.stats-section {
+    background-color: white; 
+    padding: 80px 40px;
+    margin-top: 60px;
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: column; /* Stacks container-1 and container-2 vertically */
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 50px; /* Spacing between the two rows */
+}
+
+.stats-container-1, 
+.stats-container-2 {
+    display: flex; /* Makes the items inside each row sit side-by-side */
+    justify-content: space-around;
+    width: 100%;
+    gap: 220px;
+}
+
+.stat-item {
+    flex: 1;
+    text-align: center; /* Ensures text is centered within the row */
+}
+
+.stat-item h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+    color: rgb(100, 1, 100);
+    font-family: 'Georgia', serif; 
+}
+
+.stat-item p {
+    color: #6b6a6b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    word-spacing: 2px;
+}
+
+/* Mobile Responsive: Stack everything in one column */
+@media (max-width: 768px) {
+    .stats-container-1, 
+    .stats-container-2 {
+        flex-direction: column;
+        gap: 50px;
+    }
+}
+
+
+
+
+
+
+
+
+.concerns-section {
+    /* background-color: #0 f0a13; Dark theme to match AegisSafe */
+    padding: 100px 40px;
+    /* color: black; */
+}
+
+.concerns-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.concerns-header h2 {
+    font-size: 3rem;
+    font-family: 'Georgia', serif;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.concerns-header p {
+    color: #a19ba8;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* 3-Column Grid Layout */
+.concerns-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Exactly 3 items per row */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.concern-card {
+    /* background: #1c1421; Slightly lighter purple-black for the card body */
+    background-color:white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+    border: 1px solid transparent;
+    transition: border 0.5s ease;
+}
+
+/* .concern-card:hover {
+    transform: scale(1.05);
+} */
+
+.concern-card:hover{
+    border:1px #7f21dd solid;
+}
+
+.concern-card:hover .card-image{
+    transform: scale(1.07);
+}
+
+.concern-card:hover .learn-more{
+    text-decoration:underline;
+}
+
+.card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    /* position: relative; */
+    display: flex;
+    align-items: flex-end;/*to align text at the end of container*/
+    transition:transform 0.5s ease;
+}
+
+/* Title bar at the bottom of the image */
+.card-title-overlay {
+    width: 100%;
+    padding: 15px 20px;
+    /* background: rgba(0, 0, 0, 0.6); */
+    /* backdrop-filter: blur(5px); */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-title-overlay h3 {
+    color: white;
+    /* margin: 0; */
+    font-size: 1.2rem;
+}
+
+.icon {
+    background: #e0d2e9;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content p {
+    color: #a19ba8;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    min-height: 70px; /* Keeps card heights consistent */
+}
+
+.learn-more {
+    color: #7f21dd;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    /* display: inline-flex; */
+    /* align-items: center; */
+    /* margin-left:0; */
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+
+/* Tablet Responsive: 2 columns */
+@media (max-width: 1024px) {
+    .concerns-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile Responsive: 1 column */
+@media (max-width: 650px) {
+    .concerns-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Core Layout */
+.box {
+  /* Radial gradient creates that "spotlight" effect from the image */
+  background: radial-gradient(circle, #9b59b6 0%, #663399 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+  padding: 80px 24px;
+  color: #ffffff;
+  min-height: 400px;
+}
+
+.box-inner {
+  max-width: 720px;
+}
+
+/* Typography */
+.box-heading {
+  font-family: 'Times New Roman', Times, serif; /* High-contrast serif */
+  font-size: 3.2rem;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.box-text {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+/* Button Styling */
+.box-link {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #663399; /* Deep purple text */
+  padding: 14px 32px;
+  border-radius: 100px; /* Pill shape */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: background-color 0.2s ease, transform 0.2s ease,box-shadow 0.2s ease;
+}
+
+.box-icon {
+  margin-left: 8px;
+  font-size: 1.2rem;
+}
+
+/* Interactive States */
+.box-link:hover {
+  background-color: #f4f4f4;
+  transform: scale(1.03); /* Subtle pop effect */
+    box-shadow:  10px 10px 20px rgba(163, 161, 161, 0.2);
+}
+
+.main-footer {
+  background: white; /* Matches the Challenges section background */
+  padding: 40px 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Subtle separation line */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: Georgia, serif;
+  color: black;
+}
+
+.footer-logo .sparkle {
+  color: #c77dff;
+  margin-right: 5px;
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: #121212; /* Muted lavender color */
+  opacity: 0.8;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #121212;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #f4a3d8;
+}
+/* add responsiveness */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+        gap:10px;
+    }
+
+    .nav-links{
+        font-size:12px;
+        gap:12px;
+    }
+
+    .logo{
+        font-size:1rem;
+    }
+
+    .hero {
+        margin-top: 50px; /* Reduced since navbar isn't fixed anymore */
+    }
+
+    .content h1, .box-heading {
+        font-size: 2.2rem; /* Shrink headings for mobile */
+    }
+
+    .description, .box-text {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .stats-container-1, 
+    .stats-container-2 {
+        flex-direction: column;
+        gap: 40px; /* Much smaller gap for vertical stacking */
+    }
+
+    .stat-item h2 {
+        font-size: 2.2rem;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        flex-wrap: wrap; /* Allows links to wrap to a second line if needed */
+        gap: 15px;
+    }
+}
