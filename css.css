@@ -11,7 +11,6 @@ html {
 
 body {
   color: white;
-  /* background: #111;? */
   overflow-x: hidden;   /*?*/
 }
 
@@ -25,12 +24,10 @@ body {
   align-items: center;
   justify-content: space-between;
   z-index: 10;    /*?*/
-  /* background: #e1d9f1; */
   background-color:black;
   opacity:0.7;
-  /* backdrop-filter: blur(10px);can be ignored */
-  /* transition: all 0.3s ease; */
 }
+
 
 .logo {
   font-size: 28px;
@@ -61,17 +58,14 @@ body {
 }
 
 .cta-btn {
-  /* background: linear-gradient(135deg, #7b2cbf, #f4a3d8); */
-  /* or */
-  background-color: #39077b;
-  border: none;/*removes the default button border in browser*/
+  background: linear-gradient(135deg, #7b2cbf, #f4a3d8);
+  border: none;
   padding: 10px 20px;
   border-radius: 30px;
   color: white;
-  cursor: pointer;/*converts cursor into pointer upon hovering*/
+  cursor: pointer;
   font-weight: bold;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* opacity:1; */
 }
 
 .cta-btn:hover {
@@ -94,6 +88,7 @@ body {
   from {opacity: 0; transform: scale(1.02);}
   to {opacity: 1; transform: scale(1);}
 }
+
 
 .hero-content {
   text-align: center;
@@ -193,20 +188,14 @@ body {
 
 .impact-container {
   max-width: 1100px;
-  /* width: 100%; */
-  /* position: relative; */
 }
 
 .image-wrapper {
   position: relative;
-  /* border-radius: 20px; */
-  /* overflow: visible; */
 }
 
 .impact-img {
   width: 100%;
-  /* height: auto; */
-  /* display: block; */
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
@@ -228,47 +217,29 @@ body {
 .impact-number {
   font-size: 32px;
   font-weight: 800;
-  color: #4a148c; /* Deep purple to match your theme */
-  /* line-height: 1; */
+  color: #4a148c;
 }
 
 .impact-text {
   font-size: 14px;
   color: #666;
-  margin-top: 5px;/*looks good*/
-  font-weight: 500;/*looks good*/
+  margin-top: 5px;
+  font-weight: 500;
 }
-
-/* Ensure responsiveness */
-@media (max-width: 768px) {
-  .impact-card {
-    right: 20px;
-    padding: 15px 25px;
-  }
-  .impact-number {
-    font-size: 24px;
-  }
-}
-
 
 /* 3 */
 .challenges {
-  padding: 100px 0;   /* Vertical padding only */
-  /* background: #ffffff; */
+  padding: 100px 0;
   color: #333333;
-  width: 100%;  /* ? */
-  /* display: block; */
 }
 
 .container {
-  max-width: 1100px; /* Limits the width */
-  margin: 0 auto;    /* Centers the block on the screen */
-  padding: 0 20px;   /* Adds a little "breathing room" on mobile */
+  max-width: 1100px;
+  margin: 0 auto;   
+  /* padding: 0 20px;  */
   line-height: 1.6;
 }
 
-
-/* Heading with a dark, sophisticated purple */
 .challenges h2 {
   font-size: 42px;
   margin-bottom: 10px;
@@ -278,16 +249,16 @@ body {
 
 .issues-tags {
   display: flex;
-  gap: 15px;       /* Space between the tags */
-  flex-wrap: wrap; /* Allows them to wrap on mobile */
+  gap: 15px;       
+  flex-wrap: wrap; 
   margin-top: 30px;
 }
 
 .issues-tags span {
-  background-color: #eee9f7; /* Soft lavender background */
-  color: #3e1f91;           /* Deep purple text */
-  padding: 10px 22px;       /* Padding to create the pill shape */
-  border-radius: 50px;      /* Fully rounded edges */
+  background-color: #eee9f7; 
+  color: #3e1f91;           
+  padding: 10px 22px;       
+  border-radius: 50px;      
   font-size: 15px;
   font-weight: 500;
   cursor: default;
@@ -301,7 +272,6 @@ body {
 }
 
 /* 4 */
-/* Update your existing .challenges class */
 .challenge {
   padding: 100px 20px;
   background:#f2f2f7;
@@ -309,14 +279,12 @@ body {
   text-align: center;
 }
 
-/* Update your existing .challenges h2 */
 .challenge h2 {
   font-size: 42px;
   margin-bottom: 10px;
-  font-family: Georgia, serif; /* Matches the image style */
+  font-family: Georgia, serif; 
 }
 
-/* NEW: The Badge from your image */
 .section-badge {
   display: inline-block;
   background: #e1d9f1; 
@@ -330,7 +298,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* NEW: Subtitle text */
 .subtitle {
   max-width: 600px;
   margin: 0 auto 50px auto;
@@ -338,7 +305,6 @@ body {
   font-size: 16px;
 }
 
-/* NEW: The Grid and Cards */
 .cards-grid {
   display: flex;
   justify-content: center;
@@ -354,7 +320,7 @@ body {
   border-radius: 15px;
   padding: 30px;
   text-align: left;
-  flex: 1;/* tells the cards to grow nd sit side-by side */
+  flex: 1;/* why ? */
   min-width: 250px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -373,23 +339,21 @@ body {
 }
 
 .icon-box {
-  /* font-size: 24px; */
   margin-bottom: 15px;
 }
 
 
 /* 5 */
-/* CTA Section Styling */
 .cta-section {
   padding: 100px 20px;
-  background-color: #eee9f7; /* Dark background matching the image */
+  background-color: #eee9f7;
   text-align: center;
   color: black;
 }
 
 .cta-badge {
   display: inline-block;
-  background: #e1d9f1; /* Transparent purple */
+  background: #e1d9f1;
   color: #3e1f91;
   padding: 6px 20px;
   border-radius: 50px;
@@ -408,7 +372,7 @@ body {
 }
 
 .cta-section h2 span {
-  color: #a267f5; /* Lighter purple for emphasis */
+  color: #a267f5;
 }
 
 .cta-section p {
@@ -419,7 +383,6 @@ body {
   line-height: 1.6;
 }
 
-/* Button Layout for CTA */
 .cta-actions {
   display: flex;
   justify-content: center;
@@ -427,7 +390,7 @@ body {
 }
 
 .primary-btn {
-  background: #390188; /* Bright purple from the image */
+  background: #390188;
   color: white;
   border: none;
   padding: 15px 35px;
@@ -458,9 +421,8 @@ body {
 
 /* 6 */
 .main-footer {
-  background: white; /* Matches the Challenges section background */
+  background: white;
   padding: 40px 60px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Subtle separation line */
 }
 
 .footer-container {
@@ -485,7 +447,7 @@ body {
 
 .footer-copy {
   font-size: 14px;
-  color: #121212; /* Muted lavender color */
+  color: #121212;
   opacity: 0.8;
 }
 
@@ -506,18 +468,91 @@ body {
   color: #f4a3d8;
 }
 
-/* Responsive fix for mobile */
+/* Responsiveness */
 @media (max-width: 768px) {
+  .logo{
+    font-size:1em;
+  } 
+
+  .lnk{
+    font-size:0.8rem;
+  }
+
+  .hero {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navbar {
+    padding: 15px 20px;
+    /* flex-direction: column; */
+    gap: 10px;
+  }
+
+  .nav-links {
+    /* flex-direction: column; */
+    gap: 10px;
+    align-items: center;
+  }
+
+  .cards-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .issue-card {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .cta-section h2 {
+    font-size: 32px;
+  }
+
+  .cta-section p {
+    font-size: 16px;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .impact-card {
+    right: 20px;
+    padding: 15px 25px;
+  }
+  .impact-number {
+    font-size: 24px;
+  }
+
+  .main-footer {
+    padding: 30px 20px;
+  }
+
   .footer-container {
     flex-direction: column;
     gap: 20px;
     text-align: center;
   }
+  .star {
+        display: none;
+    }
+    img {
+  max-width: 120%;
+  height: auto;
 }
-
-/* make background white and text black */       
-
-
-
-
-
+} 
