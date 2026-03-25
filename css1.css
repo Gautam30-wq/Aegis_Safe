@@ -16,59 +16,60 @@ body {
 
 /* Navbar */
 .navbar {
-    width:100%;
-    /* max-width:100%; */
-    /* box-sizing: border-box;  */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 60px;
-    background: black;
-    opacity:0.4;
-    position:fixed;
-    z-index:10;/*?*/ /*without this, things can overlap navbar*/
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: black;
+  opacity: 0.7;
+  z-index: 100;
+  box-sizing: border-box;
 }
 
-.logo { 
-    font-weight: bold; 
-    font-size: 28px; 
-    color:#c77dff;
-    letter-spacing: 1px; 
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #c77dff;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
-.nav-links { 
-    display: flex;
-    list-style: none; 
-    gap: 30px; 
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
 }
 
-.nav-links a { 
-    text-decoration: none; 
-    color: white; 
-    font-weight: 500; 
-    opacity:0.8; 
-    transition: opacity 0.3s;
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  opacity: 0.8;
+  transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-    opacity: 1;
-    color: #f4a3d8; 
-    transform: scale(1.05);
+  color: #f4a3d8;
+  opacity: 1;
+  transform: scale(1.05);
 }
 
-.cta-button { 
-    background: #39077b; 
-    color: white; 
-    padding: 8px 20px; 
-    border-radius: 30px; 
-    text-decoration: none; 
-    font-weight: bold; 
-    transition: transform 0.3s ease;
-    box-shadow: 0.3s ease;border:none;
-    cursor:pointer;
-    font-size:small;
+.cta-button {
+  background-color: #39077b;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
 }
+
 
 .cta-button:hover {
   transform: scale(1.1);
@@ -107,13 +108,13 @@ body {
 .hero-content h1 { 
     font-size: 64px; 
     font-family: 'Georgia', serif; 
-    margin: 20px 0; 
-    color:rgb(52, 49, 49);
+    margin: 0; 
+    color:rgb(2, 2, 2);
     text-shadow: #1a1a1a;
 }
 
 .hero-content p{
-    font-size:20px;
+    font-size:1.1rem;
     text-shadow: #1a1a1a;
 }
 
@@ -320,6 +321,12 @@ h2 {
     border: 1px solid #eee;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.7s ease-in-out, box-shadow 0.7s ease-in-out;
+}
+
+.content:hover{
+  transform:scale(1.06);
+  box-shadow: 0 4px 15px rgba(15, 14, 14, 0.355);
 }
 
 .date {
@@ -377,7 +384,13 @@ h2 {
     min-width: 300px;
     text-align: left;
     border: 1px solid #f0edf5;
+    transition: background-color 0.6s ease-in-out, border-color 0.6s ease-in-out;
     /* box-sizing: border-box; */
+}
+
+.challenge-card:hover{
+  background-color:#f8e5f3;
+  border-color: #52307c;
 }
 
 /* Icon Styles */
@@ -496,6 +509,10 @@ h2 {
 
 /* Responsive fix for mobile */
 @media screen and (max-width: 768px) {
+    section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
     .footer-container {
         flex-direction: column;
         gap: 20px;
@@ -504,13 +521,14 @@ h2 {
     .challenge-card { 
         width: 100%; 
     }
-    .navbar {
+    /* .navbar {
         padding: 15px 20px;
         gap:10px;
-    }
+    } */
     
     .logo {
-        font-size: 10px;
+        font-size: 1px;
+        margin-right:-30px;
     }
     
     .nav-links{
@@ -527,6 +545,19 @@ h2 {
         align-items: center;
     }
 
+    .stat-card {
+    width: 90%;
+    min-width: unset;
+  }
+
+  .stat-number {
+    font-size: 250%;
+  }
+
+  .symbol {
+    font-size: 200%;
+  }
+
     h2 {
         font-size: 30px; 
     }
@@ -534,7 +565,178 @@ h2 {
     .milestone { width: 100%; padding-left: 70px; padding-right: 25px; }
     .milestone::after { left: 24px; }
     .right { left: 0%; }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    .hero {
+    height: auto;
+    padding: 80px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+  .star {
+        display: none;
+    }
 }
 
 
 /* correct ready to help, cta-card */
+
+/* ================= MOBILE RESPONSIVENESS ================= */
+@media screen and (max-width: 768px) {
+
+  /* 🔹 NAVBAR */
+  .navbar {
+    padding: 15px 20px;
+    gap:20px;
+    /* display:flex; */
+    justify-content:space-between;
+  }
+
+  .logo {
+    font-size: 14px;
+  }
+.nav-links {
+    gap: 10px;
+    justify-content: center;
+    /* flex-direction: row; */
+    flex-wrap: nowrap;
+  }
+  .nav-links a {
+    font-size: 0.7rem;
+  }
+  /* .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-size: 12px;
+  } */
+
+  .cta-button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    margin-top: 5px;
+        font-size:10px;
+
+  }
+
+  
+  /* 🔹 HERO */
+  /* .hero {
+    height: auto;
+    padding: 100px 15px 60px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  /* 🔹 IMPACT TEXT */
+  .impact-text {
+    padding: 60px 15px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .content-wrapper {
+    font-size: 15px;
+  }
+
+  /* 🔹 STATS */
+  .stat-sec {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stat-card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .stat-number {
+    font-size: 250%;
+  }
+
+  .symbol {
+    font-size: 200%;
+  }
+
+  /* 🔹 TIMELINE */
+  .timeline::after {
+    left: 20px;
+  }
+
+  .milestone {
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 15px;
+  }
+
+  .milestone::after {
+    left: 14px;
+  }
+
+  .left, .right {
+    left: 0;
+  }
+
+  /* 🔹 TIME SECTION */
+  .time {
+    padding: 50px 15px;
+  }
+
+  .head {
+    font-size: 1.8rem;
+  }
+
+  .time p {
+    font-size: 1rem;
+  }
+
+  /* 🔹 CHALLENGES */
+  .challenges-section {
+    padding: 50px 15px;
+  }
+
+  .challenge-card {
+    width: 100%;
+    padding: 25px 20px;
+  }
+
+  /* 🔹 CTA CARD */
+  .cta-card {
+    padding: 30px 15px;
+  }
+
+  /* 🔹 FOOTER */
+  .main-footer {
+    padding: 30px 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  } 
+}
