@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #333;
+  background: #f7f5f7;
+  overflow-x: hidden;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  opacity: 0.85;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #c77dff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+  color: #f4a3d8;
+  transform: scale(1.05);
+}
+
+.cta-btn {
+  background: linear-gradient(135deg, #7b2cbf, #f4a3d8);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(199, 125, 255, 0.5);
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://images.pexels.com/photos/6520044/pexels-photo-6520044.jpeg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.hero .badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 64px;
+  font-family: Georgia, serif;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, #f4a3d8, #7b2cbf);
+  color: transparent;
+  background-clip: text;
+  /* privides transparent text */
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.hero-buttons button {
+  margin: 0 10px;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.primary {
+  background: linear-gradient(135deg, #f4a3d8, #7b2cbf);
+  color: white;
+  border: none;
+}
+
+.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.primary:hover,
+.secondary:hover {
+  transform: scale(1.05);
+}
+
+.challenge {
+  padding: 120px 40px;
+  text-align: center;
+}
+
+.section-badge {
+  display: inline-block;
+  background: #e1d9f1;
+  color: #3e1f91;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.challenge h2 {
+  font-size: 42px;
+  margin-bottom: 40px;
+  font-family: Georgia, serif;
+}
+
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.issue-card {
+  background: #fdfbff;
+  padding: 35px;
+  border-radius: 20px;
+  min-width: 300px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  text-align: left;
+}
+
+.issue-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(123, 44, 191, 0.15);
+  border-color: #c77dff;
+}
+
+.issue-card h3 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.issue-card p,
+.issue-card ul {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.card-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #7b2cbf;
+  color: white;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.card-btn:hover {
+  background: #c77dff;
+}
+
+.icons i {
+  font-size: 30px;
+  margin: 10px;
+  color: #c77dff;
+}
+
+iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.main-footer {
+  background: white;
+  padding: 40px 60px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+}
+
+.footer-logo .sparkle {
+  color: #c77dff;
+}
+
+.footer-copy {
+  font-size: 14px;
+  opacity: 0.8;
+  margin: 10px 0;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #121212;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #f4a3d8;
+}

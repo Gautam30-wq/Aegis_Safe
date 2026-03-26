@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    text-align: center;
+    background-color: #f7f5f7;
+
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #c77dff;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f4a3d8;
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.cta-button {
+    background-color: #39077b;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+
+.cta-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(199, 125, 255, 0.5);
+}
+
+.hero {
+    max-width: 800px;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: purple;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-weight: bold;
+}
+
+.content h1 {
+    font-family: 'Georgia', serif;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+h1 span {
+    color: purple;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: #55555a;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.btn:hover {
+    background-color: #d8b4fe;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(9, 0, 16, 0.5);
+}
+
+.stats-section {
+    background-color: white;
+    padding: 80px 40px;
+    margin-top: 60px;
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+.stats-container-1,
+.stats-container-2 {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 220px;
+}
+
+.stat-item {
+    flex: 1;
+    text-align: center;
+}
+
+.stat-item h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+    color: rgb(100, 1, 100);
+    font-family: 'Georgia', serif;
+}
+
+.stat-item p {
+    color: #6b6a6b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    word-spacing: 2px;
+}
+
+.concerns-section {
+    padding: 100px 40px;
+}
+
+.concerns-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.concerns-header h2 {
+    font-size: 3rem;
+    font-family: 'Georgia', serif;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.concerns-header p {
+    color: #a19ba8;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.concerns-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Exactly 3 items per row */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.concern-card {
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+    border: 1px solid transparent;
+    transition: border 0.5s ease;
+}
+
+.concern-card:hover {
+    border: 1px #7f21dd solid;
+}
+
+.concern-card:hover .card-image {
+    transform: scale(1.07);
+}
+
+.concern-card:hover .learn-more {
+    text-decoration: underline;
+}
+
+.card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    transition: transform 0.5s ease;
+}
+
+.card-title-overlay {
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-title-overlay h3 {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.icon {
+    background: #e0d2e9;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content p {
+    color: #a19ba8;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    min-height: 70px;
+}
+
+.learn-more {
+    color: #7f21dd;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+
+.box {
+    background: radial-gradient(circle, #9b59b6 0%, #663399 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 24px;
+    color: #ffffff;
+    min-height: 400px;
+}
+
+.box-inner {
+    max-width: 720px;
+}
+
+.box-heading {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3.2rem;
+    margin: 0 0 1rem 0;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.box-text {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+.box-link {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #663399;
+    padding: 14px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.box-icon {
+    margin-left: 8px;
+    font-size: 1.2rem;
+}
+
+.box-link:hover {
+    background-color: #f4f4f4;
+    transform: scale(1.03);
+    box-shadow: 10px 10px 20px rgba(163, 161, 161, 0.2);
+}
+
+.main-footer {
+    background: white;
+    padding: 40px 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    color: black;
+}
+
+.footer-logo .sparkle {
+    color: #c77dff;
+    margin-right: 5px;
+}
+
+.footer-copy {
+    font-size: 14px;
+    color: #121212;
+    opacity: 0.8;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #121212;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #f4a3d8;
+}
