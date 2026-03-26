@@ -24,13 +24,13 @@ body{
   gap: 20px;
 } */
 
-.nav-links {
+.links {
   display: flex;
   list-style: none;
   gap: 20px;
 }
 
-.sos-btn {
+.sos {
   background: linear-gradient(45deg, #ff4d6d, #c77dff);
   color: white;
   padding: 8px 18px;
