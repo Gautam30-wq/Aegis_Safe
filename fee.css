@@ -4,9 +4,6 @@ body{
   font-weight: bold;
   background:#f7f5f7;
 }
-/* //Segoe UI */
-
-
 .navbar{
   display:flex;
   justify-content:space-between;
@@ -17,13 +14,6 @@ body{
   top:0;
   z-index:1000;
 }
-
-/* .nav-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-} */
-
 .links {
   display: flex;
   list-style: none;
@@ -45,14 +35,14 @@ body{
   color:#7f21dd;
 }
 
-.nav-links li a{
+.links li a{
   text-decoration:none;
   color:#333;
   font-weight:500;
   transition:0.3s;
 }
 
-.nav-links li a:hover{
+.links li a:hover{
   color:#7f21dd;
 }
 
