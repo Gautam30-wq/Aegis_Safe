@@ -1,0 +1,547 @@
+/* =================================================================
+   AegisSafe — supplemental.css
+   Drop this <link> into every page's <head>, after your page's
+   own style.css:
+       <link rel="stylesheet" href="../shared/supplemental.css">
+   ================================================================= */
+
+/* ── GLOBAL SITE-NAV LAYOUT NORMALIZATION ───────────────────────── */
+/* Keep site-nav structure identical across all pages. */
+.site-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  opacity: 0.9;
+  z-index: 1000;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.site-nav .logo {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.site-nav .menu-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+.site-nav .menu-items li {
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav>a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.cta-btn,
+.sos-trigger,
+.sos-btn,
+.site-nav .cta-btn,
+.site-nav .sos-trigger,
+.site-nav .sos-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 84px;
+  height: 40px;
+  margin: 0;
+  background: linear-gradient(135deg, #e63946, #ff4d6d);
+  border: none;
+  padding: 10px 24px;
+  border-radius: 30px;
+  color: white !important;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+  text-decoration: none;
+}
+
+.cta-btn:hover,
+.sos-trigger:hover,
+.sos-btn:hover,
+.site-nav .cta-btn:hover,
+.site-nav .sos-trigger:hover,
+.site-nav .sos-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px rgba(230, 57, 70, 0.6);
+}
+
+
+/* ── SITE-NAV SCROLL STATE ────────────────────────────────────── */
+/* Default site-nav already has opacity:0.7 via inline page CSS.
+   When JS adds .site-nav--scrolled we override to a solid frost. */
+.site-nav--scrolled {
+  opacity: 1 !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.35s ease, backdrop-filter 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Smooth transition back when scrolling to top */
+.site-nav {
+  transition: background-color 0.35s ease, opacity 0.35s ease,
+    backdrop-filter 0.35s ease, box-shadow 0.35s ease;
+}
+
+
+/* ── ACTIVE NAV LINK ────────────────────────────────────────── */
+.menu-items a.active-nav {
+  opacity: 1;
+  color: #f4a3d8;
+  position: relative;
+}
+
+/* Underline indicator */
+.menu-items a.active-nav::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #f4a3d8, #c77dff);
+  border-radius: 2px;
+}
+
+
+/* ── ACCORDION SEARCH HIGHLIGHT ─────────────────────────────── */
+/* Applied by JS when a search term matches text inside a <details> */
+mark.search-highlight {
+  background: linear-gradient(120deg, #f4a3d880 0%, #c77dff60 100%);
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 2px;
+  font-weight: 700;
+  /* no box-shadow so it stays readable inside dense text */
+}
+
+
+/* ── LOADING SPINNER ────────────────────────────────────────── */
+/* Usage:
+       const spinner = document.createElement('div');
+       spinner.className = 'loading-spinner';
+       someContainer.appendChild(spinner);
+*/
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(199, 125, 255, 0.25);
+  border-top-color: #c77dff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 30px auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+#manual-location-wrap input:focus {
+  border-color: #c77dff !important;
+  box-shadow: 0 0 0 3px rgba(199, 125, 255, 0.2);
+}
+
+#manual-location-wrap button:hover {
+  background: #9d4edd !important;
+}
+
+[data-count].count-done {
+  animation: countPop 0.3s ease;
+}
+
+@keyframes countPop {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.fill[data-target] {
+  width: 0 !important;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 42px, 0);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.timeline .milestone .content.scroll-reveal {
+  transition-duration: 0.85s;
+}
+
+/* ── GLOBAL SOS MODAL ────────────────────────────────────────── */
+
+#sos-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 5, 20, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+#sos-modal-overlay.sos-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── PHASE 1: HOLD TO ACTIVATE POPUP ── */
+#sos-hold-popup {
+  background: #1e132e;
+  border: 1px solid rgba(255, 77, 109, 0.3);
+  border-radius: 24px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px inset rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+  transform: scale(0.95);
+  opacity: 0;
+  max-width: 90vw;
+}
+
+#sos-modal-overlay.sos-active #sos-hold-popup {
+  transform: scale(1);
+  opacity: 1;
+}
+
+#sos-modal-overlay.sos-panel-active #sos-hold-popup {
+  transform: scale(0.9);
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+#sos-hold-title {
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin: 0;
+}
+
+.sos-hold-subtitle {
+  color: #cbb4d9;
+  font-size: 15px;
+  margin: 0;
+  max-width: 250px;
+  line-height: 1.4;
+}
+
+/* Circular Button with SVG Progress */
+.sos-button-wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 10px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+.sos-button-wrapper svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  /* Start at 12 o'clock */
+  pointer-events: none;
+}
+
+.sos-progress-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 8;
+}
+
+.sos-progress-ring {
+  fill: none;
+  stroke: #ff4d6d;
+  stroke-width: 8;
+  stroke-linecap: round;
+  /* 2 * pi * r = 2 * 3.14159 * 66 = 414.69 */
+  stroke-dasharray: 414.69;
+  stroke-dashoffset: 414.69;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.sos-hold-btn {
+  position: absolute;
+  inset: 12px;
+  /* Leaves space for the SVG stroke */
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e63946, #ff4d6d);
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+  z-index: 2;
+}
+
+.sos-button-wrapper:active .sos-hold-btn {
+  transform: scale(0.92);
+  box-shadow: 0 0 20px rgba(230, 57, 70, 0.8), inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sos-warning-msg {
+  color: #ff4d6d;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sos-warning-msg.visible {
+  opacity: 1;
+}
+
+#sos-hold-pct {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ff4d6d;
+  font-weight: 700;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#sos-full-panel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  background: #11091a;
+  overflow-y: auto;
+}
+
+#sos-modal-overlay.sos-panel-active #sos-full-panel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#sos-full-panel .panel-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#sos-full-panel .panel-header h2 {
+  color: #ff4d6d;
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  margin: 0 0 10px;
+}
+
+#sos-full-panel .panel-header p {
+  color: #e0d2e9;
+  font-size: 18px;
+  margin: 0;
+}
+
+.sos-panel-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.sos-priority-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(230, 57, 70, 0.3);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.sos-priority-btn:hover {
+  background: #d62828;
+  transform: translateY(-2px);
+}
+
+.sos-secondary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.sos-secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sos-location-btn {
+  background: linear-gradient(135deg, #c77dff, #9d4edd);
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: opacity 0.2s ease;
+}
+
+.sos-location-btn:hover {
+  opacity: 0.9;
+}
+
+.sos-quick-exit {
+  margin-top: 40px;
+  background: transparent;
+  color: #8a7b9c;
+  border: 1px solid #8a7b9c;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sos-quick-exit:hover {
+  background: #8a7b9c;
+  color: #11091a;
+}
+
+.site-footer {
+  background: white;
+  padding: 40px 60px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: Georgia, serif;
+  color: black;
+}
+
+.footer-logo .sparkle {
+  color: #c77dff;
+  margin-right: 5px;
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: #121212;
+  opacity: 0.8;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #121212;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #f4a3d8;
+}
